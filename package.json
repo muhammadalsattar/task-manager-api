@@ -4,8 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx nodemon index.js",
-    "dev": "env-cmd -f ./src/config/dev.env nodemon index.js"
+    "start": "npx nodemon src/index.js",
+    "dev": "env-cmd -f ./src/config/dev.env nodemon src/index.js",
+    "test": "env-cmd -f ./src/config/test.env jest --forceExit --runInBand"
+  },
+  "jest": {
+    "testEnvironment": "node"
   },
   "author": "",
   "license": "ISC",
@@ -23,6 +27,8 @@
   },
   "devDependencies": {
     "env-cmd": "^10.1.0",
-    "prettier": "^2.6.0"
+    "jest": "^27.5.1",
+    "prettier": "^2.6.0",
+    "supertest": "^6.2.2"
   }
 }

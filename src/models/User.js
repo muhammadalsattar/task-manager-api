@@ -52,7 +52,7 @@ const userSchema = new Schema(
 );
 
 userSchema.methods.generateAuthToken = async function () {
-  return jwt.sign({ id: this._id }, process.env.JWT_SECRET_KEY);
+  return jwt.sign({ _id: this._id }, process.env.JWT_SECRET_KEY);
 };
 
 userSchema.methods.toJSON = function () {
